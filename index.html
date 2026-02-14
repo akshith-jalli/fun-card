@@ -210,9 +210,10 @@
     }
 
     function handleYesButton() {
-        yesClickCount++;  // increment click count
+         // increment click count
 
         if (noCount > 0) {
+            yesClickCount++; 
             if(yesClickCount === 1) {
                 // First click → call function1
                 questionElement.innerText = "Bathikinchaav !! Inthaki idhi manaki enno valentines day ?? "
@@ -233,6 +234,8 @@
                 // Second click → call function2
                 // questionElement.innerText = "Be on my side forever Chinnam.. \nilaney 3 godavalu 6 alakalu gaa life antha undham !! \n Untavaa life long naatho ?"
             }
+        } else {
+            questionElement.innerText = "Sollu cheppaku !! Select NO ...."
         }
     }
 
