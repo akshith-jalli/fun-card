@@ -137,6 +137,7 @@
 
     let runHandler;  // store reference globally
     let yesClickCount = 0;  // global counter
+    let noCount = 0;
 
 
     function make_button_run_away(btn){
@@ -211,25 +212,27 @@
     function handleYesButton() {
         yesClickCount++;  // increment click count
 
-        if(yesClickCount === 1) {
-            // First click → call function1
-            questionElement.innerText = "Bathikinchaav !! Inthaki idhi manaki enno valentines day ?? "
-            showValentineCountQuestion();
-        } else if(yesClickCount === 2) {
-            // Second click → call function2
-            questionElement.innerText = "Naaku thelusey !!! I'm so so sorry ... \n Sorry Accepted ? "
-        }
-        else if(yesClickCount === 3) {
-            // Second click → call function2
-            questionElement.innerText = "Do you still love me ?"
-        }
-        else if(yesClickCount === 4) {
-            // Second click → call function2
-            questionElement.innerText = "Be on my side forever Chinnam.. \nilaney 3 godavalu 6 alakalu gaa life antha undham !! \n Untavaa life long naatho ?"
-        } else if(yesClickCount ===5) {
-            window.open("https://digibouquet.vercel.app/bouquet/e168a428-8081-473a-a16d-06133aa2a605", "_blank");
-            // Second click → call function2
-            // questionElement.innerText = "Be on my side forever Chinnam.. \nilaney 3 godavalu 6 alakalu gaa life antha undham !! \n Untavaa life long naatho ?"
+        if (noCount > 0) {
+            if(yesClickCount === 1) {
+                // First click → call function1
+                questionElement.innerText = "Bathikinchaav !! Inthaki idhi manaki enno valentines day ?? "
+                showValentineCountQuestion();
+            } else if(yesClickCount === 2) {
+                // Second click → call function2
+                questionElement.innerText = "Naaku thelusey !!! I'm so so sorry ... \n Sorry Accepted ? "
+            }
+            else if(yesClickCount === 3) {
+                // Second click → call function2
+                questionElement.innerText = "Do you still love me ?"
+            }
+            else if(yesClickCount === 4) {
+                // Second click → call function2
+                questionElement.innerText = "Be on my side forever Chinnam.. \nilaney 3 godavalu 6 alakalu gaa life antha undham !! \n Happy Valentine's day Chinnammm !!! \nUntavaa life long naatho ?"
+            } else if(yesClickCount ===5) {
+                window.open("https://digibouquet.vercel.app/bouquet/e168a428-8081-473a-a16d-06133aa2a605", "_blank");
+                // Second click → call function2
+                // questionElement.innerText = "Be on my side forever Chinnam.. \nilaney 3 godavalu 6 alakalu gaa life antha undham !! \n Untavaa life long naatho ?"
+            }
         }
     }
 
@@ -256,6 +259,7 @@
 
 
     function nextQuestion1n() {
+        noCount ++;
         document.getElementById("header").style.display = "none"
         questionElement.innerText = "Durmarkuraalaa !!! Ippudu Gurthochanaa ?? "
         photoContainer.style.display = "flex";
